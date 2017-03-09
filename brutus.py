@@ -32,8 +32,7 @@ def request(host, dir, port, usuarios, passwords, sec):
 				print response.status,
 				print "--> "+u+":"+p,
 				code = response.read()
-				#print code
-				if code.find("login") >= 0 or code.find("Datos erróneos. Por favor, inténtelo otra vez") >=0:
+				if code.find("Invalid login, please try again") >= 0 or code.find("Datos erróneos. Por favor, inténtelo otra vez") >=0:
 					print chr(27)+"[0;91m"+"Incorrect"
 				else:
 					print chr(27)+"[0;92m"+"Correct"
@@ -45,11 +44,11 @@ def request(host, dir, port, usuarios, passwords, sec):
 				print response.status,
 				print "--> "+u+":"+p,
 				code = response.read()
-				if code.find("You are already logged in ") >= 0:
+				if code.find("Invalid login, please try again") >= 0 or code.find("Datos erróneos. Por favor, inténtelo otra vez") >=0:
 					print chr(27)+"[0;91m"+"Incorrect"
 				else:
 					print chr(27)+"[0;92m"+"Correct"
-					print chr(27)+"[0m"
+				print chr(27)+"[0m"
 			connect.close()
 	
 #	except:
@@ -74,6 +73,7 @@ else:
 		hostIndex = sys.argv.index("-s")+1 #Guarda el indice de donde se encuentra el sitio
 		userIndex = sys.argv.index("-u")+1 #Indice del usuario
 		passIndex = sys.argv.index("-p")+1 #Indice de la contrasena
+
 	
 		host = sys.argv[hostIndex] #Guarda los parametros que se le pasaron
 		usr = sys.argv[userIndex]
@@ -87,11 +87,11 @@ else:
 		else:
 			port = 443 if sec else 80 #Si no se especifica el puerto por defecto es el 80 (http) o 443 (https)
 	
-		if "-d" in sys.argv: #directorio
+		if "-r" in sys.argv: #directorio
 			dirIndex = sys.argv.index("-d")+1
 			dir = sys.argv[dirIndex]
 		else:
-			dir = "/" #Si no se especifica, el directorio (recurso) por defecto es el actual
+			dir = "/login/index.php" #Si no se especifica, el directorio (recurso) por defecto el de moodle
 	
 		if os.path.isfile(usr): #Revisa si el parametro de usuarios es un archivo 
 			with open(usr) as f: #Lo abre y recorre todos sus elementos

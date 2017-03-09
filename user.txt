@@ -1,0 +1,10 @@
+admin
+maestro
+invitado
+profesor
+estudiante
+hola
+adios
+acisneros
+vcastro
+amondragon

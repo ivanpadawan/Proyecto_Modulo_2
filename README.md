@@ -12,7 +12,7 @@ Herramienta que debe contener las siguientes características:
 - Reporte de credenciales válidas.
 - Especificaciones mínimas requeridas se especifican a continuación:
     
-    Opción        Descripción
+    Opción\t        Descripción\n
     -s, --ip      Dirección IP
     -u, --user    Usuario
     -d, --dic     Diccionario de usuarios

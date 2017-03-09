@@ -12,11 +12,11 @@ Herramienta que debe contener las siguientes características:
 - Reporte de credenciales válidas.
 - Especificaciones mínimas requeridas se especifican a continuación:
     
-    Opción\t        Descripción\n
-    -s, --ip      Dirección IP
-    -u, --user    Usuario
-    -d, --dic     Diccionario de usuarios
-    -p, --pass    Diccionario de passwords
-    -r, --report  Generar reporte
-    -h            Mostrar ayuda
+   <pre>Opción          Descripción
+        -s, --ip       Dirección IP
+        -u, --user     Usuario
+        -d, --dic      Diccionario de usuarios
+        -p, --pass     Diccionario de passwords
+        -r, --report   Generar reporte
+        -h             Mostrar ayuda</pre>
     

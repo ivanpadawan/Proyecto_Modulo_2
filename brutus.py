@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 #import httplib, urllib, 
-import sys, os, ssl, time, mechanize, requests, re
+import sys, os, ssl, time, mechanize, requests, re, warnings
+warnings.filterwarnings("ignore")
 
 def help():
 	print("\t\t\t\t\t\tBRUTUS")

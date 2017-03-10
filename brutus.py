@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 #import httplib, urllib, 
-import sys, os, ssl, html, time, mechanize, requests, re
+import sys, os, ssl, time, mechanize, requests, re
 
 def help():
 	print("\t\t\t\t\t\tBRUTUS")

@@ -169,10 +169,8 @@ def reporttxt(good,bad,version):
 if len(sys.argv) == 2 and sys.argv[1] == "-h":
 	help()
 elif len(sys.argv) < 7: #por lo menos debe tener 7 parametros
-	print "PARAMETROS"
 	printError()
 elif not("-s" in sys.argv and "-u" in sys.argv or "--user" in sys.argv and "-p" in sys.argv or "--pass" in sys.argv): #por lo menos debe incluir el usuario, contrasena, host y metodo de autenticacion
-	print "OPCIONES"
 	printError()
 else:
 	try:

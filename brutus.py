@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 #import httplib, urllib, 
-import sys, os, ssl, html, time, mechanize, requests, re
+import sys, os, ssl, time, mechanize, requests, re
 
 def help():
 	print("\t\t\t\t\t\tBRUTUS")
@@ -55,8 +55,19 @@ def request(host, dir, port, usuarios, passwords, sec, rep):
 					bad = bad +1
 				else:
 					good[u]=p
+		print "Credenciales Encontradas: \n\n"
+		print "\t\t\tUSUARIO\t\tPASSWORD\n"
+		for k, v in sorted(good.items()):
+			print"\t\t\t%s\t\t%s\n" % (k,v)
+
 	except:
 		print "Ocurrio un error durante la conexion.\n"
+
+		if len(good) > 0:
+			print "Credenciales Encontradas: \n\n"
+			print "\t\t\tUSUARIO\t\tPASSWORD\n"
+			for k, v in sorted(good.items()):
+				print"\t\t\t%s\t\t%s\n" % (k,v)
 	if rep:
 		reporthtml(good,bad,version)
 		reporttxt(good,bad,version)
